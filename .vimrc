@@ -17,9 +17,3 @@ set incsearch
 set ignorecase
 
 set showtabline=2
-
-"Русская раскладка (не работает)
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
