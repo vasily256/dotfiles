@@ -1,5 +1,6 @@
 syntax on
 inoremap kj <ESC>
+set timeoutlen=1000 ttimeoutlen=0
 
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
