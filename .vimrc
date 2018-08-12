@@ -1,5 +1,6 @@
 syntax on
 inoremap kj <ESC>
+nnoremap p p=`]
 set timeoutlen=1000 ttimeoutlen=0
 
 set ffs=unix,dos,mac
