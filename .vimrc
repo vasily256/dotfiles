@@ -1,7 +1,8 @@
 syntax on
-inoremap kj <ESC>
+inoremap kj <ESC>`^
 cnoremap kj <C-c>
 xnoremap kj <ESC>
+nnoremap <Alt> <ESC>
 nnoremap p p=`]g;
 nnoremap P P=`]g;
 set timeoutlen=200 ttimeoutlen=0
@@ -15,7 +16,6 @@ set smarttab
 set expandtab
 set autoindent
 set cindent
-
 
 set showmatch
 set hlsearch
