@@ -1,5 +1,10 @@
 syntax on
 
+nnoremap h <BS>
+nnoremap l <Space>
+xnoremap h <BS>
+xnoremap l <Space>
+
 nnoremap j gj
 nnoremap k gk
 xnoremap j gj
