@@ -15,15 +15,20 @@ cnoremap kj <C-c>
 xnoremap kj <ESC>
 onoremap kj <ESC>
 
+inoremap jk <ESC>`^
+cnoremap jk <C-c>
+xnoremap jk <ESC>
+onoremap jk <ESC>
+
 inoremap KJ <ESC>`^
 cnoremap KJ <C-c>
 xnoremap KJ <ESC>
 onoremap KJ <ESC>
 
-inoremap jk <ESC>`^
-cnoremap jk <C-c>
-xnoremap jk <ESC>
-onoremap jk <ESC>
+inoremap JK <ESC>`^
+cnoremap JK <C-c>
+xnoremap JK <ESC>
+onoremap JK <ESC>
 
 nnoremap <Space> :noh<CR>
 
