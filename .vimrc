@@ -15,6 +15,11 @@ cnoremap kj <C-c>
 xnoremap kj <ESC>
 onoremap kj <ESC>
 
+inoremap KJ <ESC>`^
+cnoremap KJ <C-c>
+xnoremap KJ <ESC>
+onoremap KJ <ESC>
+
 inoremap jk <ESC>`^
 cnoremap jk <C-c>
 xnoremap jk <ESC>
@@ -22,8 +27,8 @@ onoremap jk <ESC>
 
 nnoremap <Space> :noh<CR>
 
-nnoremap p p=`]g;
-nnoremap P P=`]g;
+"nnoremap p p=`]g;
+"nnoremap P P=`]g;
 
 set timeoutlen=100 ttimeoutlen=0
 
