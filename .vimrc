@@ -36,6 +36,7 @@ nnoremap <Space> :noh<CR>
 "nnoremap P P=`]g;
 
 set timeoutlen=100 ttimeoutlen=0
+set mouse=a
 
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
