@@ -1,4 +1,6 @@
-syntax on
+"------------------------------------
+"General settings:
+"------------------------------------
 
 nnoremap h <BS>
 nnoremap l <Space>
@@ -36,10 +38,19 @@ nnoremap <Space> :noh<CR>
 "nnoremap P P=`]g;
 
 set timeoutlen=100 ttimeoutlen=0
-set mouse=a
 
-set ffs=unix,dos,mac
-set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
+set showmatch
+set hlsearch
+set incsearch
+"set ignorecase
+
+"------------------------------------
+"Vim specific settings:
+"------------------------------------
+
+syntax on
+set showtabline=2
+"set mouse=a
 
 set tabstop=4
 set shiftwidth=4
@@ -48,9 +59,13 @@ set expandtab
 set autoindent
 set cindent
 
-set showmatch
-set hlsearch
-set incsearch
-set ignorecase
+set ffs=unix,dos,mac
+set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 
-set showtabline=1
+function! LANG_MAKEFILE()
+   setlocal noexpandtab     " makefiles only work with tab-indents
+   setlocal shiftwidth=8
+   setlocal tabstop=8
+   setlocal softtabstop=8
+endfunction
+autocmd FileType make call LANG_MAKEFILE()
