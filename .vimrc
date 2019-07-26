@@ -48,6 +48,12 @@ set incsearch
 "Vim specific settings:
 "------------------------------------
 
+"language
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
 syntax on
 set showtabline=2
 "set mouse=a
