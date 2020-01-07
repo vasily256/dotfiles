@@ -7,10 +7,10 @@ nnoremap l <Space>
 xnoremap h <BS>
 xnoremap l <Space>
 
-nnoremap j gj
-nnoremap k gk
-xnoremap j gj
-xnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
+"xnoremap j gj
+"xnoremap k gk
 
 inoremap kj <ESC>`^
 cnoremap kj <C-c>
@@ -57,6 +57,7 @@ highlight lCursor guifg=NONE guibg=Cyan
 syntax on
 set showtabline=2
 "set mouse=a
+set laststatus=2
 
 set tabstop=4
 set shiftwidth=4

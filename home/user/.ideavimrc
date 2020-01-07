@@ -1,0 +1,41 @@
+"nnoremap h <BS>
+"nnoremap l <Space>
+"xnoremap h <BS>
+"xnoremap l <Space>
+"
+"nnoremap j gj
+"nnoremap k gk
+"xnoremap j gj
+"xnoremap k gk
+
+inoremap kj <ESC>`^
+cnoremap kj <C-c>
+xnoremap kj <ESC>
+onoremap kj <ESC>
+
+inoremap jk <ESC>`^
+cnoremap jk <C-c>
+xnoremap jk <ESC>
+onoremap jk <ESC>
+
+inoremap KJ <ESC>`^
+cnoremap KJ <C-c>
+xnoremap KJ <ESC>
+onoremap KJ <ESC>
+
+inoremap JK <ESC>`^
+cnoremap JK <C-c>
+xnoremap JK <ESC>
+onoremap JK <ESC>
+
+nnoremap <Space> :noh<CR>
+
+"nnoremap p p=`]g;
+"nnoremap P P=`]g;
+
+set timeoutlen=100 ttimeoutlen=0
+
+set showmatch
+set hlsearch
+set incsearch
+"set ignorecase
