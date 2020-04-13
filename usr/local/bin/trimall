@@ -1,7 +1,0 @@
-#!/bin/sh
-
-fstrim -v /boot
-fstrim -v /
-fstrim -v /var
-fstrim -v /tmp
-fstrim -v /home
