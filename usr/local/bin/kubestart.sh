@@ -46,4 +46,5 @@ echo
 minikube dashboard
 
 virsh --connect qemu:///system managedsave minikube
+minikube stop
 
