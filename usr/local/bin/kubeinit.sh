@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cpus=8
-memory=4096
+memory=6144
 driver='kvm2'
 
 color=$(tput setaf 2)
@@ -13,6 +13,7 @@ minikube start --cpus $cpus --memory $memory --vm-driver=$driver
 
 echo ${color}Setting up container registry${reset}
 minikube addons enable registry
+minikube addons enable dashboard
 docker run --restart always -it -d --network=host --name=registry alpine ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(minikube ip):5000"
 
 guest_ip=$(minikube ip)
@@ -34,17 +35,6 @@ else
     echo ${err_color}Error editing $hosts_file${reset}
 fi
 
-int_trap() {
-    echo
-    echo ${color}Suspending minikube to disk${reset}
-}
-trap int_trap INT
-
-echo ${color}Starting is complete. Press Ctrl-C to suspend minikube${reset}
+echo ${color}Starting is complete.${reset}
 echo
-
-minikube dashboard
-
-virsh --connect qemu:///system managedsave minikube
-minikube stop
 
