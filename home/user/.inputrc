@@ -8,4 +8,7 @@ $if mode=vi
     # insert mode             
     set keymap vi-insert                          
     "jk": vi-movement-mode # remap escape   
+    "kj": vi-movement-mode # remap escape   
+    "JK": vi-movement-mode # remap escape   
+    "KJ": vi-movement-mode # remap escape   
 $endif 
