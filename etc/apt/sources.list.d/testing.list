@@ -1,0 +1,11 @@
+deb http://mirror.corbina.net/debian/ bullseye main non-free contrib
+# deb-src http://mirror.corbina.net/debian/ bullseye main non-free contrib
+
+# bullseye-updates, previously known as 'volatile'
+deb http://mirror.corbina.net/debian/ bullseye-updates main contrib non-free
+# deb-src http://mirror.corbina.net/debian/ bullseye-updates main contrib non-free
+
+# bullseye-backports, previously on backports.debian.org
+deb http://mirror.corbina.net/debian/ bullseye-backports main contrib non-free
+# deb-src http://mirror.corbina.net/debian/ bullseye-backports main contrib non-free
+

@@ -1,0 +1,2 @@
+deb http://mirror.corbina.net/debian/ sid main non-free contrib
+# deb-src http://mirror.corbina.net/debian/ sid main non-free contrib

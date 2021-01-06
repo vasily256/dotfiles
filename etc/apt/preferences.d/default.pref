@@ -1,0 +1,15 @@
+Package: *
+Pin: release a=buster-backports
+Pin-Priority: 103
+
+Package: *
+Pin: release a=testing
+Pin-Priority: 102
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 101
+
+Package: *
+Pin: release a=experimental
+Pin-Priority: 90

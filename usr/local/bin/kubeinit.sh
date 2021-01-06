@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cpus=8
-memory=4096
-disk='16G'
+cpus=16
+memory='8G'
+disk='20G'
 driver='kvm2'
 
 color=$(tput setaf 2)
@@ -14,9 +14,9 @@ minikube start --cpus $cpus --memory=$memory --disk-size=$disk --vm-driver=$driv
 
 echo ${color}Setting up container registry${reset}
 minikube addons enable registry
-minikube addons enable dashboard
-minikube addons enable ingress
 minikube addons enable metrics-server
+minikube addons enable ingress
+minikube addons enable dashboard
 docker run --restart always -it -d --network=host --name=registry alpine ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(minikube ip):5000"
 
 guest_ip=$(minikube ip)
