@@ -70,7 +70,7 @@ i3status | (read line; echo "$line"; read line ; echo "$line" ; read line ; echo
 do
   read line
   json_array="$(echo $line | sed -e 's/^,//')"
-  fill_holder    holder__cpu_freq    2000 2800    $(($(cpufreq.sh)/1000))
+  fill_holder    holder__cpu_freq    2000 2800    $(($(cpufreq.sh)))
   fill_holder    holder__cpu_temp    60 80        $(sensors | awk '/^Tctl/ {print $2 " " $3}')
   fill_holder    holder__ram         50 60        $(free -g | awk '/^Mem/ {print $3"/"$2}')    $(free -g | awk '/^Mem/ {print $3}')
   echo ",$json_array" 
