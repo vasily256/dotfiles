@@ -1,0 +1,9 @@
+[Unit]
+Description=CPU TDP limiter
+
+[Service]
+ExecStart=/usr/local/bin/cpu-tdp-limiter.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

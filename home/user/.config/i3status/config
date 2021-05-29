@@ -14,14 +14,21 @@ general {
 
 # order += "ipv6"
 # order += "disk /"
+order += "tztime VPN"
 order += "run_watch DHCP"
-order += "run_watch VPN"
+#order += "run_watch VPN"
 order += "wireless wlp4s0"
 order += "ethernet eno1"
 order += "battery 0"
 # order += "load"
-order += "tztime holder__cpu_freq"
-order += "tztime holder__cpu_temp"
+order += "tztime RAM"
+order += "tztime CPU_LOADED"
+order += "tztime TURBO"
+order += "tztime CPU_FREQ"
+order += "tztime CPU_TEMP"
+order += "tztime S1_TEMP"
+order += "tztime S2_TEMP"
+order += "tztime GPU_TEMP"
 order += "tztime local"
 
 wireless wlp4s0 {
@@ -31,7 +38,8 @@ wireless wlp4s0 {
 
 ethernet eno1 {
         # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
+        #format_up = "E: %ip (%speed)"
+        format_up = "E: %ip"
         format_down = "E: down"
 }
 
@@ -43,8 +51,12 @@ run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
 }
 
-run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+#run_watch VPN {
+#        pidfile = "/var/run/vpnc/pid"
+#}
+
+tztime VPN {
+       format = "VPN"
 }
 
 tztime local {
@@ -59,11 +71,34 @@ disk "/" {
         format = "%avail"
 }
 
-tztime holder__cpu_freq {
-       format = "holder__cpu_freq"
+tztime RAM {
+       format = "RAM"
 }
 
-tztime holder__cpu_temp {
-       format = "holder__cpu_temp"
+tztime TURBO {
+       format = "TURBO"
 }
 
+tztime CPU_FREQ {
+       format = "CPU_FREQ"
+}
+
+tztime CPU_LOADED {
+       format = "CPU_LOADED"
+}
+
+tztime CPU_TEMP {
+       format = "CPU_TEMP"
+}
+
+tztime S1_TEMP {
+       format = "S1_TEMP"
+}
+
+tztime S2_TEMP {
+       format = "S2_TEMP"
+}
+
+tztime GPU_TEMP {
+       format = "GPU_TEMP"
+}

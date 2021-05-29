@@ -1,0 +1,2 @@
+kafka-topics.sh --zookeeper zookeeper:2181 --alter --topic topic_name --partitions 4
+kafka-topics.sh --zookeeper zookeeper:2181 --create --topic topic_name --partitions 4

@@ -1,0 +1,1 @@
+username hostname = (root) NOPASSWD: /usr/local/bin/executable

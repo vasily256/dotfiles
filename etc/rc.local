@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost
+cputurbo.sh $(cat /usr/local/etc/cputurbo)
+exit 0

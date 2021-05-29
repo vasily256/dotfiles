@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 cpus=16
-memory='8G'
+memory='16G'
 disk='20G'
 driver='kvm2'
 
@@ -23,14 +23,14 @@ guest_ip=$(minikube ip)
 guest_name='k8s.test'
 host_ip=$(minikube ssh "route -n | grep ^0.0.0.0 | awk '{ print \$2 }'")
 host_name='host.test'
-ip_pattern='^([0-9]{1,3}[\.]){3}[0-9]{1,3}$'
+ip_pattern='^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$'
 hosts_file='/etc/hosts'
 
 #echo ${color}Setting up host-machine domain in the minikube $hosts_file${reset}
 #minikube ssh "echo $host_ip $host_name | sudo tee --append $hosts_file"
 
 echo ${color}Setting up minikube domain in the host $hosts_file${reset}
-if [[ $guest_ip =~ $ip_pattern ]];
+if [ ! $(expr $guest_ip : $ip_pattern) -eq 0 ];
 then
     sudo sed -i '/'$guest_name'$/ d' $hosts_file
     echo $guest_ip $guest_name | sudo tee --append $hosts_file

@@ -1,20 +1,16 @@
 #!/bin/sh
 
-refresh_rate=1
+refresh_period=2
 
 if [ ! -z $1 ] ; then
-    refresh_rate=$1
+    refresh_period=$1
 fi
 
-watch -t -n $refresh_rate --color \
+watch -t -n $refresh_period --color \
 "
-printf 'Governor: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor) | '
-printf 'Max freq: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq) | '
-echo 'Turbo core: $(cat /sys/devices/system/cpu/cpu0/cpufreq/cpb)'
-echo
 cpufreq.sh -v
 echo
-sensors -A | grep Tctl
-echo
-nvidia-smi | sed -n -e 3p -e 6p -e 10p
+sensors -A | grep -e Tctl -e Composite -e Sensor
+nvidia-smi | sed -n 10p
 "
+#nvidia-smi | sed -n -e 3p -e 6p -e 10p

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 color=$(tput setaf 2)
 reset=$(tput sgr0)

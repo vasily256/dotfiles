@@ -1,0 +1,9 @@
+[Unit]
+Description=Auto CPU booster
+
+[Service]
+ExecStart=/usr/local/bin/cpu-booster.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

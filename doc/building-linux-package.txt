@@ -1,0 +1,6 @@
+tar -xvf /usr/src/linux-source-5.10.tar.xz
+7z x /usr/src/linux-config-5.10/config.amd64_rt_amd64.xz
+patch -p1 < ~/src/linux/kernel_gcc_patch/more-uarches-for-gcc-v10-and-kernel-5.8+.patch
+make menuconfig
+CONFIG_DEBUG_INFO
+make -j`nproc` deb-pkg LOCALVERSION=-m KDEB_PKGVERSION=$(make kernelversion)-m
