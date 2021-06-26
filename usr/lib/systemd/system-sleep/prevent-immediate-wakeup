@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $1 in
+  pre)
+    echo XHC1 > /proc/acpi/wakeup
+    ;;
+esac
+
