@@ -79,12 +79,12 @@ do
   fill_holder  VPN         1     1     "VPN "      "$vpn_enabled"                                                  ""
   fill_holder  RAM         40    60    "RAM "      $(echo "$free" | awk '/^Mem/ {print $3}')                        "$(echo "$free" | awk '/^Mem/ {print "/"$2}') GiB"
   fill_holder  CPU_LOADED  8     10    "CPU "      $(echo $cpufreq | awk '{print $1}')                              "/$(echo $cpufreq | awk '{print $2}')"
+  fill_holder  TURBO       1     2     "Turbo "    "$turbo_mode"                                                    ""
   fill_holder  CPU_FREQ    2000  2900  ""           $(echo $cpufreq | awk '{print $4}')                              " MHz"
   fill_holder  CPU_TEMP    50    80    ""           $(echo "$sensors" | grep -oP "(Tctl).*:\s+\K\+\d+\.\d+")         "°"
   fill_holder  S1_TEMP     50    70    "NVMe "     $(echo "$sensors" | grep -oP "(Sensor 1).*:\s+\K\+\d+\.\d+")     "°"
   fill_holder  S2_TEMP     50    70    ""           $(echo "$sensors" | grep -oP "(Sensor 2).*:\s+\K\+\d+\.\d+")     "°"
   fill_holder  GPU_TEMP    50    80    "GPU "      $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)  "°"
-  fill_holder  TURBO       1     2     "Turbo "    "$turbo_mode"                                                    ""
 
   echo ",$json_array" 
 done)

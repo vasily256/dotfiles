@@ -21,7 +21,7 @@ print_header() {
         printf "$turbo_text"
     fi
         
-    printf "Max freq: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq_khz) | "
+    printf "Max freq: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq) | "
     echo "Governor: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)"
     echo
 }

@@ -17,7 +17,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 7
+font pango:Terminus 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -187,6 +188,18 @@ bindsym $mod+Shift+p move workspace to output left
 bindsym $mod+Shift+t exec sudo cputurbo.sh
 bindsym $mod+Shift+i exec sudo lan2wlan.sh
 
+bindsym $mod+plus exec sudo bright.sh +1
+bindsym $mod+minus exec sudo bright.sh -1
+
+# Screenshots
+#bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+#bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+#bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+## Clipboard Screenshots
+#bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+#bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
 focus_on_window_activation focus
 focus_follows_mouse no
 focus_wrapping force
@@ -198,7 +211,7 @@ bar {
         tray_output primary
         output primary
         status_command i3status.sh
-        font pango:monospace 8
+        font pango:Terminus 8
         colors {
             inactive_workspace #444444 #222222 #eeeeee
         }
@@ -215,6 +228,8 @@ for_window [class="Gsimplecal"] move absolute position 0px 30px
 for_window [class="Gsimplecal"] floating enable
 
 # System tray apps
+#exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
+exec --no-startup-id xcompmgr -nc -t -10 -l -26 -o 0.4 -r 12
 exec gxkb
 exec volumeicon
 exec telegram-desktop -startintray

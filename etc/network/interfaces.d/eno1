@@ -1,0 +1,4 @@
+auto eno1
+allow-hotplug eno1
+iface eno1 inet dhcp
+
